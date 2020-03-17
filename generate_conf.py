@@ -45,7 +45,7 @@ def generate_names():
 
 def generate_training_bash():
 	f = open(conf_directory_name+ "/" +  "start-train.sh", "w")
-	bash_content = ["../../darknet/darknet detector train "+ project_name +".data "+project_name+".cfg darknet19_448.conv.23\n"]
+	bash_content = ["../tools/darknet/darknet detector train "+ project_name +".data "+project_name+".cfg darknet19_448.conv.23\n"]
 	f.writelines(bash_content)
 	f.close()
 
