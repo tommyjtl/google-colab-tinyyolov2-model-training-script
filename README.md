@@ -1,6 +1,9 @@
 # Automated Model Training Script on Google CoLab
 ---
 
+* git clone --recursive `this repo`
+* git submodule update --init
+
 ## User input:
 
 * Please enter your dataset directory location on Google Drive:
