@@ -1,8 +1,7 @@
 # Automated Model Training Script on Google CoLab
----
 
-* git clone --recursive `this repo`
-* git submodule update --init
+* `git clone --recursive $thisrepo`
+* `git submodule update --init`
 
 ## User input:
 
