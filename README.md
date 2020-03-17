@@ -51,6 +51,8 @@ Put all your image data to on folder (remember to categorize each class to indiv
 		...
 ```
 
+* Warning: Before you do the labeling work, please do not use such an image that its storage size is larger than 1MB, you can use photo processing software or online tool to resize it.
+
 ## Reference:
 
 * [When should I stop training](https://github.com/AlexeyAB/darknet#when-should-i-stop-training)
