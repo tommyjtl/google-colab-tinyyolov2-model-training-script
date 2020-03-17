@@ -1,7 +1,7 @@
 import glob, random, os, time
 
 conf_directory_name = "conf"
-google_drive_path = "/Users/tommyjtl/Documents/CocoRobo/"
+google_drive_path = "/home/ubuntu/projects/"
 
 google_drive_project_path = input("Please enter the dataset directory path you put on Google Drive: \n") 
 classes_count = input("Please enter the number of classes you would like to train: \n")
