@@ -1,1 +1,1 @@
-../darknet/darknet detector train train.data train.cfg darknet19_448.conv.23
+../darknet/darknet detector train trash.data trash.cfg darknet19_448.conv.23
