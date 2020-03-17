@@ -1,1 +1,0 @@
-../darknet/darknet detector test trash.data trash.cfg backup/trash_last.weights test/oldhat.jpg

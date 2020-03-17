@@ -1,6 +1,15 @@
 # Automated Model Training Script on Google CoLab
 ---
 
+## User input:
+
+* Please enter your dataset directory location on Google Drive:
+	* must have directories for each class
+	* must have a `.names` file that includes the names of each class that you want to recognized
+* Please enter the number of classes you would like to train:
+* Please enter the name of your project:
+
+
 ## Upload your labeled dataset to Google Drive
 
 Put all your image data to on folder (remember to categorize each class to individual folders), the file structure will look something like this:

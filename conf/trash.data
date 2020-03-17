@@ -1,0 +1,5 @@
+classes=4
+train  = /Users/tommyjtl/Documents/CocoRobo/google-colab-template/model_user_data-colab/data/train.txt
+valid  = /Users/tommyjtl/Documents/CocoRobo/google-colab-template/model_user_data-colab/data/test.txt
+names = trash.names
+backup = /Users/tommyjtl/Documents/CocoRobo/google-colab-template/model_user_data-colab/backup
