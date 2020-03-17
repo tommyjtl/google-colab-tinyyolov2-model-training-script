@@ -40,6 +40,8 @@ Put all your image data to on folder (remember to categorize each class to indiv
 		...
 ```
 
+## G
+
 
 
 ## Reference:
