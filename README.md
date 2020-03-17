@@ -49,10 +49,6 @@ Put all your image data to on folder (remember to categorize each class to indiv
 		...
 ```
 
-## G
-
-
-
 ## Reference:
 
 * [When should I stop training](https://github.com/AlexeyAB/darknet#when-should-i-stop-training)
