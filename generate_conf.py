@@ -22,7 +22,7 @@ def generate_data():
 		"classes="+ str(int(float(classes_count))) +"\n",
 		"train  = "+current_directory_path+"/data/train.txt\n",
 		"valid  = "+current_directory_path+"/data/test.txt\n",
-		"names = trash.names\n",
+		"names = " + project_name + ".names\n",
 		"backup = "+current_directory_path+"/backup\n"
 	]
 	f.writelines(data_content)
