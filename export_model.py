@@ -83,8 +83,8 @@ def prepare_ncc_package():
 
 def copy_to_tfliteconversion():
 	print("Copy files to tflitetokmodel convertion directory...")
-	os.system("cp ./tools/darkflow/built_graph/" + project_name + ".meta ./tools/tflite2kmodel-colab/workspace/")
-	os.system("cp ./tools/darkflow/built_graph/" + project_name + ".pb ./tools/tflite2kmodel-colab/workspace/")
+	os.system("cp ./tools/darkflow-colab/built_graph/" + project_name + ".meta ./tools/tflite2kmodel-colab/workspace/")
+	os.system("cp ./tools/darkflow-colab/built_graph/" + project_name + ".pb ./tools/tflite2kmodel-colab/workspace/")
 
 
 if __name__ == '__main__':
