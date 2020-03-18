@@ -80,6 +80,7 @@ def prepare_ncc_package():
 	finally:
 		f.close()
 		print("Done getting the ncc.")
+		os.chdir(current_directory_path)
 
 def copy_to_tfliteconversion():
 	try:
