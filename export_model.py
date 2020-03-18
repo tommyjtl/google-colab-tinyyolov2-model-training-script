@@ -40,8 +40,8 @@ def run_darkflow_convertion():
 	os.chdir("./tools/darkflow-colab/")
 	try:
 		exec_darkflow_command = "./flow --model cfg/" + project_name + ".cfg --load bin/" + project_name + ".weights --savepb"
-		os.system(exec_darkflow_command)
 		print(exec_darkflow_command)
+		os.system(exec_darkflow_command)
 	except IOError as e:
 		print(str(e))
 	finally:
@@ -81,10 +81,16 @@ def prepare_ncc_package():
 		f.close()
 		print("Done getting the ncc.")
 
+def copy_to_tfliteconversion():
+	print("Copy files to tflitetokmodel convertion directory...")
+	os.system("cp ./tools/darkflow/built_graph/" + project_name + ".meta ./tools/tflite2kmodel-colab/workspace/")
+	os.system("cp ./tools/darkflow/built_graph/" + project_name + ".pb ./tools/tflite2kmodel-colab/workspace/")
+
 
 if __name__ == '__main__':
 	generate_test_images_for_conversion()
 	clear_darflow_label()
 	copy_raw_to_darkflow()
 	run_darkflow_convertion()
+	copy_to_tfliteconversion()
 	prepare_ncc_package()
