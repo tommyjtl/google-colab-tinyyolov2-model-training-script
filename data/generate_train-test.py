@@ -47,10 +47,10 @@ def convert_test():
 	f=open('train.txt')
 	lines=f.readlines()
 
-	cont_line = random.sample(range(num_lines), int(num_lines/2))
+	cont_line = random.sample(range(num_lines), int(num_lines/3))
 	# print(cont_line)
 
-	for i in range(0,int(num_lines/2),1):
+	for i in range(0,int(num_lines/3),1):
 		content = lines[cont_line[i]]
 		# print(content)
 		# content = content.strip('\r')
