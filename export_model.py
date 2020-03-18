@@ -62,7 +62,7 @@ def generate_test_images_for_conversion():
 		for i in range(0,int(num_lines/4),1):
 			content = lines[cont_line[i]]
 			content = content.strip('\n')
-			os.system("cp " + content + " ../tools/tflite2kmodel-colab/images/" + project_name + "")
+			os.system("cp " + content + " ../tools/tflite2kmodel-colab/images/")
 			# print(content)
 		f.close()
 		os.chdir(current_directory_path)
