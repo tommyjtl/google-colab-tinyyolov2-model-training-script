@@ -1,4 +1,4 @@
-import subprocess
+import subprocess, os
 
 batcmd="bash check-aws.sh"
 result = subprocess.check_output(batcmd, shell=True)
