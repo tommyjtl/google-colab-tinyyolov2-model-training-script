@@ -9,6 +9,8 @@ classes_count = input("Please enter the number of classes you would like to trai
 project_name = input("Please enter the name of your project: \n")
 current_directory_path = os.getcwd()
 
+# shenzhen_trash_classification_sign_dataset
+
 def generate_cfg():
 	print("\n1. Total classes is " + classes_count + ", " + project_name + ".cfg generated to conf directory")
 	f = open(conf_directory_name+ "/" + project_name + ".cfg", "w")
@@ -23,7 +25,7 @@ def generate_data():
 		"classes="+ str(int(float(classes_count))) +"\n",
 		"train  = " + current_directory_path + "/data/train.txt\n",
 		"valid  = " + current_directory_path + "/data/test.txt\n",
-		"names = " + project_name + ".names\n",
+		"names = " + current_directory_path + "/conf/" + project_name + ".names\n",
 		"backup = " + current_directory_path + "/backup\n"
 	]
 	f.writelines(data_content)
