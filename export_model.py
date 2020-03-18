@@ -1,4 +1,5 @@
 import glob, random, os, time, shutil
+import subprocess
 
 project_name = input("Please enter the name of your project: \n")
 
@@ -23,8 +24,15 @@ def copy_raw_to_darkflow():
 		print("Done copying files to darkflow directory.")
 
 def run_darkflow_convertion():
-	os.chdir("./tools/darkflow-colab/")
+	batcmd="bash check-aws.sh"
+	result = subprocess.check_output(batcmd, shell=True)
+	if result.decode('unicode_escape') == "yes":
+		print("this is an aws server, activating tensorflow env...")
+		os.system("* source activate tensorflow_p36")
+	elif result.decode('unicode_escape') != "yes":
+		print("this is not an aws server, just go with the flow...")
 
+	os.chdir("./tools/darkflow-colab/")
 	try:
 		os.system("./flow --model cfg/" + project_name + ".cfg --load bin/" + project_name + ".weights --savepb")
 	except IOError as e:
@@ -58,7 +66,6 @@ def prepare_ncc_package():
 	os.chdir("./tools/tflite2kmodel-colab/")
 	try:
 		f = open("ncc.zip")
-		# Do something with the file
 	except IOError:
 		print("File not existed, downloading ncc.")
 		os.system("wget https://cocoroboai.s3-ap-southeast-1.amazonaws.com/ncc.zip")
