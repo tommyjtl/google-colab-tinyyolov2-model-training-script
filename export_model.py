@@ -14,11 +14,6 @@ def clear_darflow_label():
 
 def copy_raw_to_darkflow():
 	try:
-		os.mkdir("./convert/to-be-exported")
-	except IOError as e:
-		print(str(e))
-
-	try:
 		os.system("cp ./conf/" + project_name + ".names ./tools/darkflow-colab/labels.txt")
 		os.system("cp ./conf/" + project_name + ".cfg ./convert/to-be-exported/")
 		os.system("cp ./backup/" + project_name + "_last.weights ./convert/to-be-exported/")

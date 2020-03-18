@@ -43,7 +43,7 @@ def delete_data():
 
 def delete_conversion():
 	try:
-		os.chdir("./convert/")
+		os.chdir("./convert/to-be-exported")
 		os.system("rm -rf ./*")
 	except IOError as e:
 		print(str(e))
