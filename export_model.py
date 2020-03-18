@@ -82,10 +82,22 @@ def prepare_ncc_package():
 		print("Done getting the ncc.")
 
 def copy_to_tfliteconversion():
+	try:
+		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".meta\n")
+		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".pb\n")
+		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".tflite\n")
+	except IOError as e:
+		print(str(e))
+
 	print("Copy files to tflitetokmodel convertion directory...")
 	os.system("cp ./tools/darkflow-colab/built_graph/" + project_name + ".meta ./tools/tflite2kmodel-colab/workspace/")
 	os.system("cp ./tools/darkflow-colab/built_graph/" + project_name + ".pb ./tools/tflite2kmodel-colab/workspace/")
 
+def exec_final_convertion():
+	os.chdir("./tools/tflite2kmodel-colab/")
+	os.system("toco --graph_def_file=workspace/"+project_name+".pb --input_format=TENSORFLOW_GRAPHDEF --output_format=TFLITE --output_file=workspace/"+project_name+".tflite --inference_type=FLOAT --input_type=FLOAT --input_arrays=input --output_arrays=output --input_shapes=1,224,224,3")
+	os.system("bash tflite2kmodel.sh workspace/"+project_name+".tflite")
+	os.chdir(current_directory_path)
 
 if __name__ == '__main__':
 	generate_test_images_for_conversion()
@@ -94,3 +106,4 @@ if __name__ == '__main__':
 	run_darkflow_convertion()
 	copy_to_tfliteconversion()
 	prepare_ncc_package()
+	exec_final_convertion()
