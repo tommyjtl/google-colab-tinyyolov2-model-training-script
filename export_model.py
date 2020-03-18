@@ -99,6 +99,7 @@ def exec_final_convertion():
 	os.system("toco --graph_def_file=workspace/"+project_name+".pb --input_format=TENSORFLOW_GRAPHDEF --output_format=TFLITE --output_file=workspace/"+project_name+".tflite --inference_type=FLOAT --input_type=FLOAT --input_arrays=input --output_arrays=output --input_shapes=1,224,224,3")
 	os.system("bash tflite2kmodel.sh workspace/"+project_name+".tflite")
 	os.chdir(current_directory_path)
+	os.system("cp ./tools/tflite2kmodel-colab/workspace/"+ project_name +".kmodel ./convert")
 
 if __name__ == '__main__':
 	generate_test_images_for_conversion()
