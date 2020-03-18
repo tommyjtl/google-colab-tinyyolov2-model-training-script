@@ -58,8 +58,16 @@ def generate_test_images_for_conversion():
 
 def prepare_ncc_package():
 	os.chdir("./tools/tflite2kmodel-colab/")
-	os.system("wget https://cocoroboai.s3-ap-southeast-1.amazonaws.com/ncc.zip")
-	os.system("unzip ncc.zip")
+	try:
+		f = open("ncc.zip")
+		# Do something with the file
+	except IOError:
+		print("File not existed, downloading ncc.")
+		os.system("wget https://cocoroboai.s3-ap-southeast-1.amazonaws.com/ncc.zip")
+		os.system("unzip ncc.zip")
+	finally:
+		f.close()
+		print("Done getting the ncc.")
 
 
 if __name__ == '__main__':
