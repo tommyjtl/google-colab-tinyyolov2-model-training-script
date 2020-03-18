@@ -48,6 +48,16 @@ def delete_conversion():
 	except IOError as e:
 		print(str(e))
 	finally:
+		print("Done deleting conf files from previous conversion.")
+		os.chdir("../")
+
+	try:
+		os.chdir("./tools/tflite2kmodel-colab/images/")
+		os.system("rm -rf ./*")
+	except IOError as e:
+		print(str(e))
+	finally:
+		print("Done deleting previous test images from previous conversion.")
 		os.chdir("../")
 
 if __name__ == '__main__':
@@ -75,5 +85,6 @@ if __name__ == '__main__':
 			print("deleting all...\n")
 			delete_conf()
 			delete_data()
+			delete_conversion()
 		elif check_if_continue == "n":
 			print("does nothing, exiting now.")
