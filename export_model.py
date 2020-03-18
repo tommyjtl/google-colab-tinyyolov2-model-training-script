@@ -37,6 +37,7 @@ def run_darkflow_convertion():
 	os.chdir("./tools/darkflow-colab/")
 	try:
 		os.system("./flow --model cfg/" + project_name + ".cfg --load bin/" + project_name + ".weights --savepb")
+		print("./flow --model cfg/" + project_name + ".cfg --load bin/" + project_name + ".weights --savepb")
 	except IOError as e:
 		print(str(e))
 	finally:
