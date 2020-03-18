@@ -50,10 +50,29 @@ def generate_training_bash():
 	f.writelines(bash_content)
 	f.close()
 
+def generate_testing_bash():
+	os.chdir("./data/")
+	num_lines = sum(1 for line in open('train.txt'))
+	f=open('train.txt')
+	lines=f.readlines()
+	cont_line = random.sample(range(num_lines), 1)
+	for i in range(0,1,1):
+		content = lines[cont_line[i]]
+		content = content.strip('\n')
+		print(content)
+		os.system("cp " + content + " ../test/" + project_name + "_test.jpg")
+		# print(content)
+	f.close()
+	# ../tools/darknet-colab/darknet detector test trash.data trash.cfg ../../trash_weights_backup/trash_last.weights ../test/plastic_18.jpg
+	f = open("../conf/test-train.sh", "w")
+	bash_content = ["../tools/darknet-colab/darknet detector test "+ project_name +".data "+project_name+".cfg ../backup/" + project_name + "_last.weights ../test/" + project_name + "_test.jpg\n"]
+	f.writelines(bash_content)
+	f.close()
+	os.chdir(current_directory_path)
+
 
 if __name__ == '__main__':
 	# shenzhen_trash_classification_sign_dataset
-	
 	os.system("cp -a "+ google_drive_path +google_drive_project_path + "/. data/")
 	generate_cfg()
 	generate_data()
@@ -62,3 +81,4 @@ if __name__ == '__main__':
 	os.chdir("./data/")
 	exec(open("generate_train-test.py").read())
 	os.chdir(current_directory_path)
+	generate_testing_bash()

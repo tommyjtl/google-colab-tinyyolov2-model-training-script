@@ -7,9 +7,11 @@ def delete_conf():
 	try:
 		os.chdir("./conf/")
 		os.system("rm start-train.sh")
+		os.system("rm test-train.sh")
 		os.system("rm ./*.cfg")
 		os.system("rm ./*.data")
 		os.system("rm ./*.names")
+		os.system("rm ../test/*")
 	except IOError as e:
 		print(str(e))
 	finally:
