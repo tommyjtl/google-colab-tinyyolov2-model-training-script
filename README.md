@@ -3,9 +3,9 @@
 * `git clone --recursive $thisrepo`
 * `git submodule update --init`
 * `python generate_conf.py`
-* `cd ./conf/ && bash start_train.sh`
-* `bash test-train.sh`
-
+* `cd ./conf/ && bash start_train.sh && cd ..`
+* `cd ./conf/ && bash test_train.sh && cd ..`
+* `python export_model.py`
 
 ## User input:
 

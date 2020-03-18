@@ -53,7 +53,7 @@ def convert_test():
 	for i in range(0,int(num_lines/2),1):
 		content = lines[cont_line[i]]
 		# print(content)
-		content = content.strip('\r')
+		# content = content.strip('\r')
 		with open("test.txt", "a") as myfile:
 			myfile.write(content)
 		
