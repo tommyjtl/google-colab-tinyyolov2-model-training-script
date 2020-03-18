@@ -25,10 +25,13 @@ def delete_data():
 			names_file_name = names_file
 			print(names_file_name)
 			os.remove(names_file_name)
-		# if os.name == "posix": os.rmdir(".DS_Store")
 		data_file_list = os.listdir("./")
 		data_file_list.remove("generate_train-test.py")
-		data_file_list.remove(".DS_Store")
+		try:
+			data_file_list.remove(".DS_Store")
+		except BaseException as e:
+			print(str(e))
+			pass
 		for i in range(len(data_file_list)): 
 			print("Deleting " + data_file_list[i] + "...")
 			shutil.rmtree(data_file_list[i])
