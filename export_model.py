@@ -84,9 +84,9 @@ def prepare_ncc_package():
 
 def copy_to_tfliteconversion():
 	try:
-		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".meta\n")
-		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".pb\n")
-		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".tflite\n")
+		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".meta")
+		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".pb")
+		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".tflite")
 	except IOError as e:
 		print(str(e))
 
