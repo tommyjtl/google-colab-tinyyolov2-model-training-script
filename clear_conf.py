@@ -30,7 +30,8 @@ def delete_data():
 		try:
 			data_file_list.remove(".DS_Store")
 		except BaseException as e:
-			print(str(e))
+			if str(e) == "list.remove(x): x not in list":
+				print("Not macOS system, pass")
 			pass
 		for i in range(len(data_file_list)): 
 			print("Deleting " + data_file_list[i] + "...")
