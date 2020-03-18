@@ -2,6 +2,10 @@
 
 * `git clone --recursive $thisrepo`
 * `git submodule update --init`
+* `python generate_conf.py`
+* `cd ./conf/ && bash start_train.sh`
+* `bash test-train.sh`
+
 
 ## User input:
 
