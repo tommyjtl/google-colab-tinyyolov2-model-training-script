@@ -69,7 +69,7 @@ def generate_testing_bash():
 	f = open("../conf/test-train.sh", "w")
 	bash_content = [
 	"cd "+current_directory_path+"/tools/darknet-colab\n",
-	"./darknet detector test ../../" + project_name +".data ../../"+project_name+".cfg ../../backup/" + project_name + "_last.weights ../../test/" + project_name + "_test.jpg\n",
+	"./darknet detector test ../../" + conf_directory_name + "/" + project_name + ".data ../../" + conf_directory_name + "/" + project_name+".cfg ../../backup/" + project_name + "_last.weights ../../test/" + project_name + "_test.jpg\n",
 	"cd "+current_directory_path+"\n"
 	]
 	f.writelines(bash_content)
