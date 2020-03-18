@@ -60,3 +60,4 @@ Put all your image data to on folder (remember to categorize each class to indiv
 ## Reference:
 
 * [When should I stop training](https://github.com/AlexeyAB/darknet#when-should-i-stop-training)
+* [2](https://medium.com/@manivannan_data/how-to-train-yolov2-to-detect-custom-objects-9010df784f36)
