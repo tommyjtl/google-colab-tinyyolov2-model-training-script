@@ -83,13 +83,7 @@ def prepare_ncc_package():
 		os.chdir(current_directory_path)
 
 def copy_to_tfliteconversion():
-	try:
-		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".meta")
-		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".pb")
-		os.remove("./tools/tflite2kmodel-colab/workspace/"+ project_name +".tflite")
-	except IOError as e:
-		print(str(e))
-
+	os.chdir(current_directory_path)
 	print("Copy files to tflitetokmodel convertion directory...")
 	os.system("cp ./tools/darkflow-colab/built_graph/" + project_name + ".meta ./tools/tflite2kmodel-colab/workspace/")
 	os.system("cp ./tools/darkflow-colab/built_graph/" + project_name + ".pb ./tools/tflite2kmodel-colab/workspace/")
