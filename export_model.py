@@ -73,12 +73,12 @@ def prepare_ncc_package():
 	os.chdir("./tools/tflite2kmodel-colab/")
 	try:
 		f = open("ncc.zip")
+		f.close()
 	except IOError:
 		print("File not existed, downloading ncc.")
 		os.system("wget https://cocoroboai.s3-ap-southeast-1.amazonaws.com/ncc.zip")
 		os.system("unzip ncc.zip")
 	finally:
-		f.close()
 		print("Done getting the ncc.")
 		os.chdir(current_directory_path)
 
