@@ -1,13 +1,13 @@
 # Automated Model Training Script on Google CoLab
 
-* `git clone --recursive $thisrepo`
-* `git submodule update --init`
-* `cd ./tools/darknet-colab/ && make && cd ../../`
-* `cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../`
+Run following script/command one by one
+
+* `python setup.py`
 * `python generate_conf.py`
 * `cd ./conf/ && bash start_train.sh && cd ..`
 * `cd ./conf/ && bash test_train.sh && cd ..`
 * `python export_model.py`
+* `python copy_to_googledrive.py`
 
 ## User input:
 
