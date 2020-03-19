@@ -96,10 +96,10 @@ def exec_final_convertion():
 	os.system("cp ./tools/tflite2kmodel-colab/workspace/"+ project_name +".kmodel ./convert")
 
 if __name__ == '__main__':
-	generate_test_images_for_conversion()
-	clear_darflow_label()
-	copy_raw_to_darkflow()
-	run_darkflow_convertion()
+	# generate_test_images_for_conversion()
+	# clear_darflow_label()
+	# copy_raw_to_darkflow()
+	# run_darkflow_convertion()
 	copy_to_tfliteconversion()
-	prepare_ncc_package()
+	# prepare_ncc_package()
 	exec_final_convertion()
