@@ -27,7 +27,7 @@ def copy_raw_to_darkflow():
 		print("Done copying files to darkflow directory.")
 
 def run_darkflow_convertion():
-	batcmd="bash check-aws.sh"
+	batcmd="bash check_aws.sh"
 	result = subprocess.check_output(batcmd, shell=True)
 	# print(result.decode('unicode_escape').strip("\n"))
 	if result.decode('unicode_escape').strip("\n") == "yes":
