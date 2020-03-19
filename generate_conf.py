@@ -89,4 +89,4 @@ if __name__ == '__main__':
 	os.chdir("./data/")
 	exec(open("generate_train-test.py").read())
 	os.chdir(current_directory_path)
-	generate_testing_bash()
+	# generate_testing_bash()
