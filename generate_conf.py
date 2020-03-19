@@ -59,8 +59,8 @@ def generate_testing_bash():
 	num_lines = sum(1 for line in open('train.txt'))
 	f=open('train.txt')
 	lines=f.readlines()
-	cont_line = random.sample(range(num_lines), 2)
-	for i in range(0,2,1):
+	cont_line = random.sample(range(num_lines), 1)
+	for i in range(0,1,1):
 		content = lines[cont_line[i]]
 		content = content.strip('\n')
 		print(content)
@@ -70,9 +70,9 @@ def generate_testing_bash():
 	# ../tools/darknet-colab/darknet detector test trash.data trash.cfg ../../trash_weights_backup/trash_last.weights ../test/plastic_18.jpg
 	f = open("../conf/test-train.sh", "w")
 	bash_content = [
-		"cd "+current_directory_path+"/tools/darknet-colab\n",
-		"./darknet detector test ../../" + conf_directory_name + "/" + project_name + ".data ../../" + conf_directory_name + "/" + project_name+".cfg ../../backup/" + project_name + "_last.weights ../../test/" + project_name + "_test.jpg\n",
-		"cd "+current_directory_path+"\n"
+	"cd "+current_directory_path+"/tools/darknet-colab\n",
+	"./darknet detector test ../../" + conf_directory_name + "/" + project_name + ".data ../../" + conf_directory_name + "/" + project_name+".cfg ../../backup/" + project_name + "_last.weights ../../test/" + project_name + "_test.jpg\n",
+	"cd "+current_directory_path+"\n"
 	]
 	f.writelines(bash_content)
 	f.close()
