@@ -7,7 +7,8 @@ google_drive_path = "/content/"
 
 google_drive_project_path = input("Please enter the dataset directory path you put on Google Drive: \n") 
 classes_count = input("Please enter the number of classes you would like to train: \n")
-project_name = input("Please enter the name of your project: \n")
+# project_name = input("Please enter the name of your project: \n")
+project_name = google_drive_project_path
 current_directory_path = os.getcwd()
 
 # shenzhen_trash_classification_sign_dataset
