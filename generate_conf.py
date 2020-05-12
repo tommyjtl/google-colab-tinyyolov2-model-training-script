@@ -1,6 +1,7 @@
 import glob, random, os, time
 
 conf_directory_name = "conf"
+# google_drive_path = "/home/ec2-user/SageMaker/"
 # google_drive_path = "/home/ubuntu/projects/"
 google_drive_path = "/content/"
 # google_drive_path = "/Users/tommyjtl/Documents/CocoRobo/"
