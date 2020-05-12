@@ -76,7 +76,8 @@ def prepare_ncc_package():
 		f.close()
 	except IOError:
 		print("File not existed, downloading ncc.")
-		os.system("wget https://cocoroboai.s3-ap-southeast-1.amazonaws.com/ncc.zip")
+		# os.system("wget https://cocoroboai.s3-ap-southeast-1.amazonaws.com/ncc.zip")
+		os.system("wget https://help-x-cn-resource.s3.cn-north-1.amazonaws.com.cn/ncc.zip")
 		os.system("unzip ncc.zip")
 	finally:
 		print("Done getting the ncc.")
