@@ -22,7 +22,7 @@ Run following script/command one by one
 
 ## Upload your labeled dataset to Google Drive
 
-Put all your image data to on folder (remember to categorize each class to individual folders), the file structure will look something like this:
+Put all your image data to on folder (remember to categorize images of each class to their designated folder), the file structure will look something like this:
 
 ```
 - DATASET_NAME
