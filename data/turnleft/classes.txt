@@ -1,0 +1,10 @@
+trafficlight
+nomotorvehicles
+turnright
+roadahead
+stop
+noentry
+nostopping
+dangerahead
+parking
+turnleft
