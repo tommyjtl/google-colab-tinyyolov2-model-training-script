@@ -4,7 +4,7 @@ Run following script/command one by one
 
 * `python setup.py`
 * `python generate_conf.py`
-	* Use `python generate_conf.py` if you don't want the training process stop automatically when avg loss is lower than 0.06
+	* Use `python generate_conf.py` if you want the training process stop automatically when avg loss is lower than 0.06
 * `cd ./conf/ && bash start_train.sh && cd ..`
 * `cd ./conf/ && bash test_train.sh && cd ..`
 * `python export_model.py`
