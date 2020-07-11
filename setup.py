@@ -10,7 +10,7 @@ import subprocess, shlex, os, signal
 
 def run_command(command):
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
-	print("Process PID is: " + str(process.pid))
+	# print("Process PID is: " + str(process.pid))
 	while True:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
@@ -36,11 +36,11 @@ def run_command(command):
 	os.kill(int(process.pid)+1, signal.SIGKILL)
 
 try:
-	print("Getting all the tools we need... (Darknet, Darkflow, Conversion tool)")
+	print("(Step 1 of 3) Getting all the tools we need... (Darknet, Darkflow, Conversion tool)")
 	run_command("git submodule update --init")
-	print("Building darknet...")
+	print("(Step 2 of 3) Building darknet...")
 	run_command("cd ./tools/darknet-colab/ && make && cd ../../")
-	print("Building darkflow...")
+	print("(Step 3 of 3) Building darkflow...")
 	run_command("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../")
 except KeyboardInterrupt:
 	print("Keyboard Interrupted.")
