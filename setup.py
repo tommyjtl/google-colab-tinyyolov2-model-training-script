@@ -10,7 +10,7 @@ import subprocess, shlex, os, signal
 
 def run_command(command):
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
-	# print("Process PID is: " + str(process.pid))
+	print("Process PID is: " + str(process.pid))
 	while True:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
@@ -19,6 +19,9 @@ def run_command(command):
 			# print("")
 			formatted_output = output.strip().decode("utf-8")
 			print(formatted_output)
+
+			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
+				break
 			'''
 			if ("avg loss" in formatted_output) and ("rate" in formatted_output):
 				print(formatted_output)
