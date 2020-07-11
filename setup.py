@@ -8,7 +8,7 @@ os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace &&
 
 import subprocess, shlex, os, signal
 
-def run_command(command, type):
+def run_command(command):
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
 	print("Process PID is: " + str(process.pid))
 	while True:
