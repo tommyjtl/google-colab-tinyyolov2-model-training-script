@@ -9,12 +9,20 @@ os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace &&
 import subprocess, shlex, os, signal
 
 try:
+	print("""
+  ____  _               _          __   _____ 
+ / ___|| |_ ___ _ __   / |   ___  / _| |___ / 
+ \___ \| __/ _ \ '_ \  | |  / _ \| |_    |_ \ 
+  ___) | ||  __/ |_) | | | | (_) |  _|  ___) |
+ |____/ \__\___| .__/  |_|  \___/|_|   |____/ 
+               |_|                            
+		""")
 	print("(Step 1 of 3) Getting all the tools we need... (Darknet, Darkflow, Conversion tool)")
 
 	command = "git submodule update --init"
-	print(shlex.split(command))
+	# print(shlex.split(command))
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
-	print("Process PID is: " + str(process.pid))
+	# print("Process PID is: " + str(process.pid))
 	while True:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
@@ -38,12 +46,20 @@ try:
 
 
 
-
-	print("\n\n\n\n(Step 2 of 3) Building darknet...")
+	print("\n\n\n")
+	print("""
+  ____  _               ____           __   _____ 
+ / ___|| |_ ___ _ __   |___ \    ___  / _| |___ / 
+ \___ \| __/ _ \ '_ \    __) |  / _ \| |_    |_ \ 
+  ___) | ||  __/ |_) |  / __/  | (_) |  _|  ___) |
+ |____/ \__\___| .__/  |_____|  \___/|_|   |____/ 
+               |_|                                
+		""")
+	print("(Step 2 of 3) Building darknet...")
 	command = "make"
 	os.chdir("./tools/darknet-colab/")
-	print(os.listdir())
-	print(shlex.split(command))
+	# print(os.listdir())
+	# print(shlex.split(command))
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
 	print("Process PID is: " + str(process.pid))
 	while True:
@@ -63,8 +79,16 @@ try:
 
 
 
-
-	print("\n\n\n\n(Step 3 of 3) Building darkflow...")
+	print("\n\n\n")
+	print("""
+  ____  _               _____          __   _____ 
+ / ___|| |_ ___ _ __   |___ /    ___  / _| |___ / 
+ \___ \| __/ _ \ '_ \    |_ \   / _ \| |_    |_ \ 
+  ___) | ||  __/ |_) |  ___) | | (_) |  _|  ___) |
+ |____/ \__\___| .__/  |____/   \___/|_|   |____/ 
+               |_|                                
+		""")
+	print("(Step 3 of 3) Building darkflow...")
 
 	command = "python3 setup.py build_ext --inplace"
 	os.chdir("./tools/darkflow-colab/")
