@@ -29,7 +29,6 @@ try:
 			elif formatted_output == '':
 				break
 		else: break
-	# process.terminate()
 	process.terminate()
 	try:
 		process.wait(timeout=0.2)
@@ -52,16 +51,8 @@ try:
 		if output == '' and process.poll() is not None:
 			break
 		if output:
-			# print("")
 			formatted_output = output.strip().decode("utf-8")
-			print(formatted_output)
-
-			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
-				break
-			elif formatted_output == '':
-				break
 		else: break
-	# process.terminate()
 	process.terminate()
 	try:
 		process.wait(timeout=0.2)
@@ -77,9 +68,9 @@ try:
 
 	command = "python3 setup.py build_ext --inplace"
 	os.chdir("./tools/darkflow-colab/")
-	print(shlex.split(command))
+	# print(shlex.split(command))
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
-	print("Process PID is: " + str(process.pid))
+	# print("Process PID is: " + str(process.pid))
 	while True:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
@@ -87,14 +78,7 @@ try:
 		if output:
 			# print("")
 			formatted_output = output.strip().decode("utf-8")
-			print(formatted_output)
-
-			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
-				break
-			elif formatted_output == '':
-				break
 		else: break
-	# process.terminate()
 	process.terminate()
 	try:
 		process.wait(timeout=0.2)
