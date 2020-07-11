@@ -48,9 +48,9 @@ try:
 	# print("(Step 1 of 3) Getting all the tools we need... (Darknet, Darkflow, Conversion tool)")
 	# run_command("git submodule update --init", 1)
 	print("(Step 2 of 3) Building darknet...")
-	os.system("cd ./tools/darknet-colab/ && make && cd ../../")
+	stream = os.popen('cd ./tools/darknet-colab/ && make && cd ../../')
 	print("(Step 3 of 3) Building darkflow...")
-	os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../")
+	stream = os.popen('cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../')
 except KeyboardInterrupt:
 	print("Keyboard Interrupted.")
 
