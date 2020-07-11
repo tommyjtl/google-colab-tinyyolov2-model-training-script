@@ -16,7 +16,8 @@ def run_command(command):
 		if output == '' and process.poll() is not None:
 			break
 		if output:
-			formatted_output = output.strip().decode("utf-8")
+			print("")
+			# formatted_output = output.strip().decode("utf-8")
 			'''
 			if ("avg loss" in formatted_output) and ("rate" in formatted_output):
 				print(formatted_output)
