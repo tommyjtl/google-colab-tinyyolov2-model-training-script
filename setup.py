@@ -8,9 +8,12 @@ os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace &&
 
 import subprocess, shlex, os, signal
 
-def run_command(command):
+def run_command(command, type):
 	print(shlex.split(command))
-	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
+	if type == 1:
+		process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
+	elif type == 2:
+		process = subprocess.Popen(command, stdout=subprocess.PIPE)
 	print("Process PID is: " + str(process.pid))
 	while True:
 		output = process.stdout.readline()
@@ -43,11 +46,11 @@ def run_command(command):
 
 try:
 	# print("(Step 1 of 3) Getting all the tools we need... (Darknet, Darkflow, Conversion tool)")
-	# run_command("git submodule update --init")
+	# run_command("git submodule update --init", 1)
 	print("(Step 2 of 3) Building darknet...")
-	run_command("cd ./tools/darknet-colab/ && make && cd ../../")
+	run_command(["cd ./tools/darknet-colab/ && make && cd ../../"], 2)
 	print("(Step 3 of 3) Building darkflow...")
-	run_command("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../")
+	run_command(["cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../"], 2)
 except KeyboardInterrupt:
 	print("Keyboard Interrupted.")
 
