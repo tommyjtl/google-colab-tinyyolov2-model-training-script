@@ -18,6 +18,7 @@ def run_command(command):
 		if output:
 			# print("")
 			formatted_output = output.strip().decode("utf-8")
+			print(formatted_output)
 			'''
 			if ("avg loss" in formatted_output) and ("rate" in formatted_output):
 				print(formatted_output)
