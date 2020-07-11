@@ -44,7 +44,7 @@ try:
 
 	command = "make"
 	os.chdir("./tools/darknet-colab/")
-	os.listdir()
+	print(os.listdir())
 	print(shlex.split(command))
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
 	print("Process PID is: " + str(process.pid))
