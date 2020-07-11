@@ -1,11 +1,3 @@
-'''
-import os
-
-os.system("git submodule update --init")
-os.system("cd ./tools/darknet-colab/ && make && cd ../../")
-os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../")
-'''
-
 import subprocess, shlex, os, signal
 
 def run_command(command):
@@ -17,14 +9,12 @@ def run_command(command):
 			break
 		if output:
 			formatted_output = output.strip().decode("utf-8")
-			'''
 			if ("avg loss" in formatted_output) and ("rate" in formatted_output):
 				print(formatted_output)
 				iteration_times = int(formatted_output.split()[0][:-1])
 				avg_loss = float(formatted_output.split()[2])
 				# print(str(int(iteration_times)) + "," + str(float(formatted_output.split()[2])))
 				if avg_loss < 0.06: break
-			'''
 	# process.terminate()
 	process.terminate()
 	try:
@@ -35,9 +25,7 @@ def run_command(command):
 	os.kill(int(process.pid)+1, signal.SIGKILL)
 
 try:
-	run_command("git submodule update --init")
-	run_command("cd ./tools/darknet-colab/ && make && cd ../../")
-	run_command("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace && cd ../../")
+	run_command("bash start-train.sh")
 except KeyboardInterrupt:
 	print("Keyboard Interrupted.")
 
@@ -47,5 +35,4 @@ print("""
  | | | |/ _ \| '_ \ / _ \ |
  | |_| | (_) | | | |  __/_|
  |____/ \___/|_| |_|\___(_)
-                           
 	""")

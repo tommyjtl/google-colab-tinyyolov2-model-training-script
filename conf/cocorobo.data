@@ -1,5 +1,0 @@
-classes=1
-train  = /Users/tommyjtl/Documents/CocoRobo/Software/repositories/google-colab-training-script/data/train.txt
-valid  = /Users/tommyjtl/Documents/CocoRobo/Software/repositories/google-colab-training-script/data/test.txt
-names = /Users/tommyjtl/Documents/CocoRobo/Software/repositories/google-colab-training-script/conf/cocorobo.names
-backup = /Users/tommyjtl/Documents/CocoRobo/Software/repositories/google-colab-training-script/backup
