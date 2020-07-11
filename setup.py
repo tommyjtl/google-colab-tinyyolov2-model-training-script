@@ -27,9 +27,9 @@ try:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
 			break
-		if output:
-			# print("")
-			formatted_output = output.strip().decode("utf-8")
+		elif output:
+			print("")
+			# formatted_output = output.strip().decode("utf-8")
 			# print(formatted_output)
 
 			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
@@ -66,7 +66,7 @@ try:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
 			break
-		if output:
+		elif output:
 			print("")
 			# formatted_output = output.strip().decode("utf-8")
 		else: break
@@ -100,7 +100,7 @@ try:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
 			break
-		if output:
+		elif output:
 			print("")
 			# print("")
 			# formatted_output = output.strip().decode("utf-8")
