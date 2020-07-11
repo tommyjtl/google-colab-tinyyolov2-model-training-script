@@ -9,8 +9,8 @@ os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace &&
 import subprocess, shlex, os, signal
 
 def run_command(command, type):
-	print(shlex.split(command))
 	if type == 1:
+		print(shlex.split(command))
 		process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
 	elif type == 2:
 		process = subprocess.Popen(command, stdout=subprocess.PIPE)
