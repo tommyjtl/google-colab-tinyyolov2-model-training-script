@@ -8,7 +8,7 @@ os.system("cd ./tools/darkflow-colab/ && python3 setup.py build_ext --inplace &&
 
 import subprocess, shlex, os, signal
 
-def run_command(command):
+def run_command(command, type):
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
 	print("Process PID is: " + str(process.pid))
 	while True:
@@ -37,7 +37,6 @@ def run_command(command):
 		print('== subprocess exited with rc =', process.returncode)
 	except subprocess.TimeoutExpired:
 		print('subprocess did not terminate in time')
-	os.kill(int(process.pid)+1, signal.SIGKILL)
 
 try:
 	print("(Step 1 of 3) Getting all the tools we need... (Darknet, Darkflow, Conversion tool)")
