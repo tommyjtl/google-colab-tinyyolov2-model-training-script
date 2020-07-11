@@ -22,6 +22,8 @@ def run_command(command, type):
 
 			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
 				break
+			elif formatted_output == '':
+				break
 			'''
 			if ("avg loss" in formatted_output) and ("rate" in formatted_output):
 				print(formatted_output)
