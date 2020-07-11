@@ -30,7 +30,7 @@ try:
 		if output:
 			# print("")
 			formatted_output = output.strip().decode("utf-8")
-			print(formatted_output)
+			# print(formatted_output)
 
 			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
 				break
@@ -46,7 +46,7 @@ try:
 
 
 
-	print("\n\n\n")
+	print("\n")
 	print("""
   ____  _               ____           __   _____ 
  / ___|| |_ ___ _ __   |___ \    ___  / _| |___ / 
@@ -61,13 +61,14 @@ try:
 	# print(os.listdir())
 	# print(shlex.split(command))
 	process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
-	print("Process PID is: " + str(process.pid))
+	# print("Process PID is: " + str(process.pid))
 	while True:
 		output = process.stdout.readline()
 		if output == '' and process.poll() is not None:
 			break
 		if output:
-			formatted_output = output.strip().decode("utf-8")
+			print("")
+			# formatted_output = output.strip().decode("utf-8")
 		else: break
 	process.terminate()
 	try:
@@ -79,7 +80,7 @@ try:
 
 
 
-	print("\n\n\n")
+	print("\n")
 	print("""
   ____  _               _____          __   _____ 
  / ___|| |_ ___ _ __   |___ /    ___  / _| |___ / 
@@ -100,8 +101,9 @@ try:
 		if output == '' and process.poll() is not None:
 			break
 		if output:
+			print("")
 			# print("")
-			formatted_output = output.strip().decode("utf-8")
+			# formatted_output = output.strip().decode("utf-8")
 		else: break
 	process.terminate()
 	try:
