@@ -40,8 +40,7 @@ try:
 
 
 
-	print("(Step 2 of 3) Building darknet...")
-
+	print("\n\n\n\n(Step 2 of 3) Building darknet...")
 	command = "make"
 	os.chdir("./tools/darknet-colab/")
 	print(os.listdir())
@@ -74,7 +73,7 @@ try:
 
 
 
-	print("(Step 3 of 3) Building darkflow...")
+	print("\n\n\n\n(Step 3 of 3) Building darkflow...")
 
 	command = "python3 setup.py build_ext --inplace"
 	os.chdir("./tools/darkflow-colab/")
