@@ -29,7 +29,7 @@ try:
 			break
 		elif output:
 			print("")
-			# formatted_output = output.strip().decode("utf-8")
+			formatted_output = output.strip().decode("utf-8")
 			# print(formatted_output)
 
 			if "Submodule path 'tools/tflite2kmodel-colab': checked out" in formatted_output:
